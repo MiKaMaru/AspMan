@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspMan", "AspMan\AspMan.csproj", "{866A4D34-299F-479B-BC5B-841496799291}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{866A4D34-299F-479B-BC5B-841496799291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{866A4D34-299F-479B-BC5B-841496799291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{866A4D34-299F-479B-BC5B-841496799291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{866A4D34-299F-479B-BC5B-841496799291}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B46DA3C-D9EA-4551-A9A3-C855A731E6DA}
+	EndGlobalSection
+EndGlobal
