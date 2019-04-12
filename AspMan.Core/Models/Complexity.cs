@@ -4,7 +4,7 @@ namespace AspMan.Core
 {
     public class Complexity
     {
-        public int Id { get; set; }
+        public int ComplexityId { get; set; }
         [Required]
         [StringLength(3, MinimumLength = 1, ErrorMessage = "Недопустимая длина имени")]
         public string Name { get; set; }

@@ -3,10 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AspMan.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class UTFunctions
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestInitializeDB()
         {
         }
     }

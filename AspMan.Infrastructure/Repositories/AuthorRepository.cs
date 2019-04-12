@@ -21,7 +21,7 @@ namespace AspMan.Infrastructure
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Author> GetAuthor()
+        public IEnumerable<Author> Get()
         {
             throw new System.NotImplementedException();
         }

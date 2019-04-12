@@ -6,7 +6,7 @@ namespace AspMan.Core.Models
 {
     public class Task
     {
-        public int Id { get; set; }
+        public int TaskId { get; set; }
         public string Name { get; set; }
         [Required]
         public string Description { get; set; }

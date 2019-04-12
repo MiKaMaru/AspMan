@@ -6,7 +6,7 @@ namespace AspMan.Core
 {
     public class Theme
     {
-        public int Id { get; set; }
+        public int ThemeId { get; set; }
         [Required]
         [StringLength(250, MinimumLength = 1, ErrorMessage = "Недопустимая длина имени")]
         public string Name { get; set; }
