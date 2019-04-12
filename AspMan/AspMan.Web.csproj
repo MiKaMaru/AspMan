@@ -7,8 +7,17 @@
 
 
   <ItemGroup>
+    <PackageReference Include="Elect.Logger" Version="2.5.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Ninject" Version="3.3.4" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\AspMan.Core\AspMan.Core.csproj" />
+    <ProjectReference Include="..\AspMan.Infrastructure\AspMan.Infrastructure.csproj" />
+    <ProjectReference Include="..\AspMan.Test\AspMan.Test.csproj" />
   </ItemGroup>
 
 </Project>

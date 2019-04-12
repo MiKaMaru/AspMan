@@ -2,7 +2,7 @@
 
 namespace AspMan.Core.Iterfaces
 {
-    public interface IAuthorRepository : IRepository<Author>
+    public interface IComplexityRepository : IRepository<Complexity>
     {
     }
 }
