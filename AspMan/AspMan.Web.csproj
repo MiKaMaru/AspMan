@@ -20,4 +20,9 @@
     <ProjectReference Include="..\AspMan.Test\AspMan.Test.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

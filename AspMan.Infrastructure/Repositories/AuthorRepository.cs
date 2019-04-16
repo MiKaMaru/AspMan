@@ -4,10 +4,13 @@ using AspMan.Core.Iterfaces;
 
 namespace AspMan.Infrastructure
 {
-    public class AuthorRepository : IAuthorRepository
+    public class AuthorRepository : IAuthorRepository, IConcurrency
     {
+        AppContext context = new AppContext();
         public void Add(Author author)
         {
+            context.Authors.Add(author);
+
             throw new System.NotImplementedException();
         }
 
@@ -27,6 +30,16 @@ namespace AspMan.Infrastructure
         }
 
         public void Remove(string authorID)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        bool IConcurrency.IsUpdate()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        void IConcurrency.TryUpdate()
         {
             throw new System.NotImplementedException();
         }
