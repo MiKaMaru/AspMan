@@ -1,36 +1,59 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using AspMan.Core;
 using AspMan.Core.Iterfaces;
+using AspMan.Infrastructure.Interfaces;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AspMan.Infrastructure
 {
-    public class AuthorRepository : IAuthorRepository, IConcurrency
+    public class AuthorRepository : IAuthorRepository, IConcurrency, IContextMaker
     {
         AppContext context = new AppContext();
-        public void Add(Author author)
+        public void Add(Author dump)
         {
-            context.Authors.Add(author);
-
-            throw new System.NotImplementedException();
+            context.Authors.Add(dump);
+            context.OnSave();
         }
 
-        public void Edit(Author author)
+
+        public void Edit(Author dump)
         {
-            throw new System.NotImplementedException();
+            //context.Entry(dump).State;
         }
 
-        public Author FindById(string authorID)
+        public Author FindById(string dumpID)
         {
-            throw new System.NotImplementedException();
+            int id;
+            try
+            {
+                id = Convert.ToInt32(dumpID);
+
+            }
+            catch
+            {
+                id = -1;
+            }
+            var dump = (from r in context.Authors where r.AuthorId == id select r).FirstOrDefault();
+            return dump;
         }
 
         public IEnumerable<Author> Get()
         {
+            return context.Authors;
+        }
+
+        public void Remove(string dumpID)
+        {
+            Author author = FindById(dumpID);
+            context.Authors.Remove(author);
+            context.OnSave();
             throw new System.NotImplementedException();
         }
 
-        public void Remove(string authorID)
+        void IContextMaker.ContextApply(AppContext dump)
         {
+
             throw new System.NotImplementedException();
         }
 

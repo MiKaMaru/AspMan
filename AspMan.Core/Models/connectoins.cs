@@ -6,7 +6,7 @@ namespace AspMan.Core.Models
 {
     public class InputData
     {
-        public int Id { get; set; }
+        public int InputDataId { get; set; }
         public string Content { get; set; }
 
         public OutputData Output { get; set; }
@@ -15,7 +15,7 @@ namespace AspMan.Core.Models
     }
     public class OutputData
     {
-        public int Id { get; set; }
+        public int OutputDataId { get; set; }
         public string Content { get; set; }
 
         //а на сколько это OneToOne?

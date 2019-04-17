@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AspMan.Infrastructure
 {
-    class AppContext : DbContext
+    public class AppContext : DbContext
     {
         public AppContext(DbContextOptions<AppContext> options) : base(options)
         {
@@ -16,12 +16,17 @@ namespace AspMan.Infrastructure
         public DbSet<Task> Tasks { get; set; }
         public DbSet<Theme> Themes { get; set; }
         public DbSet<Complexity> Complexities { get; set; }
+        public DbSet<InputData> InputDatas { get; set; }
+        public DbSet<OutputData> OutputDatas { get; set; }
         
         public DbSet<TaskAuthor> TaskAuthors { get; set; }
+        public DbSet<TaskData> TaskDatas { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // если везде перейдём на чисты ID, то нужно будет дополнять модель правилами oneToMany в обе стороны
             modelBuilder.Entity<TaskAuthor>().HasKey(sc => new {sc.AuthorId, sc.TaskId});
+
+            modelBuilder.Entity<TaskData>().HasKey(sc => new { sc.InputDataId, sc.TaskId });
         }
 
 
@@ -41,5 +46,9 @@ namespace AspMan.Infrastructure
             }
         }
 
+        public void OnSave()
+        {
+            this.SaveChanges();
+        }
     }
 }
