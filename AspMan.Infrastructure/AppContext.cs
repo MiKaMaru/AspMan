@@ -1,10 +1,11 @@
 ﻿using AspMan.Core;
 using AspMan.Core.Models;
+using AspMan.Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace AspMan.Infrastructure
 {
-    public class AppContext : DbContext
+    public class AppContext : DbContext, IContextConcurrency
     {
         public AppContext(DbContextOptions<AppContext> options) : base(options)
         {
@@ -48,7 +49,11 @@ namespace AspMan.Infrastructure
 
         public void OnSave()
         {
-            this.SaveChanges();
+            SaveChanges();
+        }
+        public async void OnSaveAsync()
+        {
+            await SaveChangesAsync();
         }
     }
 }

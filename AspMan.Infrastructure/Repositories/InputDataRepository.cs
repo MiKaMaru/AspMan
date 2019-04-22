@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using AspMan.Core.Iterfaces;
 using AspMan.Core.Models;
 
@@ -6,7 +7,7 @@ namespace AspMan.Infrastructure.Repositories
 {
     public class InputDataRepository : IInputDataRepository
     {
-        public void Add(InputData dump)
+        public void AddAsync(InputData dump)
         {
             throw new System.NotImplementedException();
         }
@@ -27,6 +28,16 @@ namespace AspMan.Infrastructure.Repositories
         }
 
         public void Remove(string dumpID)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<InputData> IRepository<InputData>.FindByIdAsync(string dumpID)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<IEnumerable<InputData>> IRepository<InputData>.GetAsync()
         {
             throw new System.NotImplementedException();
         }

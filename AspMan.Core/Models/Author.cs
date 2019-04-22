@@ -14,6 +14,9 @@ namespace AspMan.Core
         [Range(1, 10, ErrorMessage = "Undef rating")]
         public int Rating { get; set; }
 
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+
         public IList<TaskAuthor> TaskAuthors { get; set; }
     }
 }

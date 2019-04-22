@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using AspMan.Core;
 using AspMan.Core.Iterfaces;
 
@@ -8,7 +9,7 @@ namespace AspMan.Infrastructure.Repositories
 {
     public class ComplexityRepository : IComplexityRepository
     {
-        public void Add(Complexity dump)
+        public void AddAsync(Complexity dump)
         {
             throw new NotImplementedException();
         }
@@ -29,6 +30,16 @@ namespace AspMan.Infrastructure.Repositories
         }
 
         public void Remove(string dumpID)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Complexity> IRepository<Complexity>.FindByIdAsync(string dumpID)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<IEnumerable<Complexity>> IRepository<Complexity>.GetAsync()
         {
             throw new NotImplementedException();
         }
